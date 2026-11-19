@@ -27,7 +27,7 @@
   stack: [ROS2, MediaPipe, Kinect v2, Inverse kinematics, Python]
   image: ""
   video: ""
-  github: ""
+  github: https://github.com/enesisaoglu/rmis_ws
 
 - name: ADDIM-LEAF vision backend
   tagline: Eyes for an elderly-care robot that never leaves the house
