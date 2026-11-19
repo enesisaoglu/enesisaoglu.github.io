@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Experience | {{ site.name }}{% endblock %}
+{% block description %}Work experience of {{ site.name }}: robotics and automation engineering, research on assistive robots, backend for AI products and rover perception.{% endblock %}
+{% block path %}/experience/{% endblock %}
+{% block main %}
+<header class="page-head">
+  <h1>Experience</h1>
+  <p class="lede">Industrial robot cells, an elderly-care robot in a research lab, an AI product and a Mars rover team.</p>
+</header>
+<ol class="jobs">
+  {% for job in experience %}
+  <li class="job">
+    <div class="badge" aria-hidden="true">{% if job.logo %}<img src="{{ job.logo }}" alt="">{% else %}{{ job.mark }}{% endif %}</div>
+    <div>
+      <h2 class="job-role">{{ job.role }}</h2>
+      <p class="job-org">{{ job.org }}, {{ job.place }}</p>
+      <ul class="points">{% for p in job.points %}<li>{{ p }}</li>{% endfor %}</ul>
+      {% if job.link %}<p class="links"><a href="{{ job.link.url }}">{{ job.link.text }}</a></p>{% endif %}
+    </div>
+    <div class="job-side">
+      <p class="dates">{{ job.start }} to {{ job.end }}</p>
+      {% if job.stack %}<p class="tags">{% for s in job.stack %}<span>{{ s }}</span>{% endfor %}</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ol>
+{% include "contact.html" %}
+{% endblock %}

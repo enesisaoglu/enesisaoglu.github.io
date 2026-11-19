@@ -1,0 +1,54 @@
+<svg viewBox="0 0 1000 360" role="img" aria-labelledby="fig-addim-t" xmlns="http://www.w3.org/2000/svg" font-family="Archivo, sans-serif">
+  <title id="fig-addim-t">ADDIM-LEAF vision pipeline: a spoken request goes to the multi-agent LLM controller, which calls the vision backend. The backend runs four models on one GPU through a memory manager and offers seven services.</title>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#95a1ab"/></marker>
+  </defs>
+  <style>
+    .bx { fill: #15191d; stroke: #4a545c; stroke-width: 1.2; }
+    .hl { fill: #241d06; stroke: #f2b300; stroke-width: 1.6; }
+    .t1 { fill: #eceff1; font-size: 17px; font-weight: 700; }
+    .t2 { fill: #95a1ab; font-size: 14px; }
+    .ln { stroke: #95a1ab; stroke-width: 1.4; fill: none; marker-end: url(#arr); }
+    .chip { fill: #050608; stroke: #6f7b85; stroke-width: 1; }
+    .ct { fill: #eceff1; font-size: 13.5px; font-weight: 600; }
+    .sv { fill: #eceff1; font-size: 14px; }
+  </style>
+  <rect x="8" y="8" width="984" height="344" rx="8" fill="none" stroke="#3a434a" stroke-dasharray="6 5"/>
+  <text x="26" y="36" class="t2">One Intel NUC with one GPU, inside the home, fully offline</text>
+
+  <rect class="bx" x="34" y="66" width="176" height="74" rx="6"/>
+  <text x="52" y="98" class="t1">Spoken request</text><text x="52" y="120" class="t2">in Spanish</text>
+
+  <rect class="bx" x="262" y="66" width="206" height="74" rx="6"/>
+  <text x="280" y="98" class="t1">Multi-agent LLM</text><text x="280" y="120" class="t2">controller, picks the tool</text>
+
+  <rect class="hl" x="520" y="66" width="214" height="74" rx="6"/>
+  <text x="538" y="98" class="t1">Vision backend</text><text x="538" y="120" class="t2">Django REST API</text>
+
+  <rect class="bx" x="262" y="214" width="206" height="74" rx="6"/>
+  <text x="280" y="246" class="t1">Robot camera</text><text x="280" y="268" class="t2">and ambient sensors</text>
+
+  <rect class="hl" x="494" y="186" width="266" height="148" rx="6"/>
+  <text x="512" y="214" class="t1">GPU memory manager</text>
+  <text x="512" y="234" class="t2">swaps models in and out by VRAM use</text>
+  <rect class="chip" x="512" y="250" width="110" height="30" rx="3"/><text x="524" y="270" class="ct">YOLOv8</text>
+  <rect class="chip" x="632" y="250" width="110" height="30" rx="3"/><text x="644" y="270" class="ct">SAM 3</text>
+  <rect class="chip" x="512" y="290" width="148" height="30" rx="3"/><text x="524" y="310" class="ct">Depth Anything V2</text>
+  <rect class="chip" x="670" y="290" width="78" height="30" rx="3"/><text x="680" y="310" class="ct">EasyOCR</text>
+
+  <rect class="bx" x="786" y="50" width="186" height="284" rx="6"/>
+  <text x="804" y="80" class="t1">Seven services</text>
+  <text x="804" y="112" class="sv">Patient identification</text>
+  <text x="804" y="142" class="sv">Medication tracking</text>
+  <text x="804" y="172" class="sv">Nutrition analysis</text>
+  <text x="804" y="202" class="sv">Object and hazards</text>
+  <text x="804" y="232" class="sv">Document reader</text>
+  <text x="804" y="262" class="sv">Person following</text>
+  <text x="804" y="292" class="sv">Exercise tracking</text>
+
+  <path class="ln" d="M210 103 H258"/>
+  <path class="ln" d="M468 103 H516"/>
+  <path class="ln" d="M734 103 H782"/>
+  <path class="ln" d="M627 140 V182"/>
+  <path class="ln" d="M468 251 H490"/>
+</svg>

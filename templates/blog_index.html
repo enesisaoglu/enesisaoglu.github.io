@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Writing | {{ site.name }}{% endblock %}
+{% block description %}Notes and write-ups by {{ site.name }} on robotics, computer vision, reinforcement learning, embedded systems and building robots.{% endblock %}
+{% block path %}/blog/{% endblock %}
+{% block main %}
+<header class="page-head">
+  <h1>Writing</h1>
+  <p class="lede">Notes from building robots: what worked, what broke and what I learned. <a href="/blog/feed.xml">RSS</a></p>
+</header>
+<section class="section" style="padding-top:1rem">
+  {% if posts %}
+  {% for year, items in posts|groupby('year')|reverse %}
+  <h2 class="year">{{ year }}</h2>
+  <ul class="rows">
+    {% for post in items %}
+    <li><p class="when"><time datetime="{{ post.date|iso }}">{{ post.date.strftime('%-d %B') }}</time><br>{{ post.minutes }} min read</p>
+      <div><h3><a href="/blog/{{ post.slug }}/">{{ post.title }}</a></h3>{% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+      {% if post.tags %}<p class="tags">{% for t in post.tags %}<span>{{ t }}</span>{% endfor %}</p>{% endif %}</div></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+  {% else %}
+  <p class="empty">The first post is on its way. Until then, the <a href="/projects/">projects</a> show what I have been building.</p>
+  {% endif %}
+</section>
+{% endblock %}

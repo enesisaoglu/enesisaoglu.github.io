@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>{{ site.name }}, writing</title>
+  <link>{{ site.url }}/blog/</link>
+  <description>Notes on building robots by {{ site.name }}.</description>
+{% for post in posts %}  <item>
+    <title>{{ post.title }}</title>
+    <link>{{ site.url }}/blog/{{ post.slug }}/</link>
+    <guid>{{ site.url }}/blog/{{ post.slug }}/</guid>
+    <pubDate>{{ post.date.strftime('%a, %d %b %Y 00:00:00 +0000') }}</pubDate>
+    <description>{{ post.summary }}</description>
+  </item>
+{% endfor %}</channel>
+</rss>

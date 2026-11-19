@@ -1,0 +1,32 @@
+# Site settings. Change these and push; the site rebuilds itself.
+name: Enes Isaoglu
+name_native: Enes İsaoğlu          # Turkish spelling, helps Google match both
+role: Robotics Engineer
+url: https://enesisaoglu.github.io
+description: >-
+  Enes Isaoglu is a robotics engineer working on industrial automation,
+  computer vision, reinforcement learning and humanoid robots.
+intro: >-
+  I build robots end to end, from the circuit board and firmware to
+  perception and autonomous behaviour. Industrial KUKA cells, an assistive
+  robot for elderly care and a humanoid I designed from scratch so far.
+location: Türkiye
+email: enesisaogluu@gmail.com
+linkedin: https://www.linkedin.com/in/enesisaoglu/
+github: https://github.com/enesisaoglu
+cv: /cv/Enes_Isaoglu_CV.pdf
+open_to_work: true                 # shows the "open to robotics roles" line
+
+education:
+  - degree: B.Sc. Computer Engineering
+    school: Istanbul Kültür University
+    place: Istanbul, Türkiye
+    years: 2020 to 2025
+    note: "Capstone: RMIS, an open-source humanoid robot that mimics human motion"
+
+languages:
+  - { name: Turkish, level: Native }
+  - { name: English, level: C1 }
+  - { name: Spanish, level: B1 }
+# Paste the code Google Search Console gives you ("HTML tag" method), only the content="..." part
+google_verification: ""

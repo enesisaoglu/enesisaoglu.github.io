@@ -1,0 +1,54 @@
+# Projects. Optional fields:
+#   image: a photo in static/img/, e.g. /img/rmis.jpg
+#   video: a link to a demo video
+#   video_embed: YouTube embed link (https://www.youtube.com/embed/VIDEO_ID), shows the video on the page
+#   github: link to the code
+#   paper: link to a paper or /research/
+- name: Synapiens
+  tagline: A humanoid that learns to move from human demonstrations
+  status: Ongoing
+  text: >-
+    The next step for RMIS. I am training the humanoid in MuJoCo with imitation
+    and reinforcement learning, then moving the learned behaviours onto the
+    physical robot. Supervised by a university professor.
+  stack: [MuJoCo, Reinforcement learning, Imitation learning, ROS2]
+  image: ""
+  video: ""
+  github: ""
+
+- name: RMIS
+  tagline: Open-source humanoid robot that copies your movements
+  status: Capstone project
+  text: >-
+    I designed and built a humanoid with 16+ controllable joints. A Kinect v2
+    and MediaPipe track the person in front of it with under 50 ms of
+    processing latency, and inverse kinematics turns their pose into joint
+    angles in real time.
+  stack: [ROS2, MediaPipe, Kinect v2, Inverse kinematics, Python]
+  image: ""
+  video: ""
+  github: ""
+
+- name: ADDIM-LEAF vision backend
+  tagline: Eyes for an elderly-care robot that never leaves the house
+  status: Research, UPCT
+  text: >-
+    Seven camera services for a companion robot that runs completely offline
+    on a small PC. Several heavy vision models share one GPU through a
+    VRAM-aware memory manager, so the robot keeps working without crashing.
+  stack: [YOLOv8, SAM 3, Depth Anything V2, EasyOCR, Django REST Framework, PostgreSQL]
+  image: ""
+  video: ""
+  github: ""
+  paper: /research/
+
+- name: Let's GO
+  tagline: Travel app with an AI trip planner
+  status: Team project
+  text: >-
+    Integrated a generative AI chatbot that builds personalised travel
+    itineraries from the user's preferences.
+  stack: [Generative AI, Chatbot integration]
+  image: ""
+  video: ""
+  github: ""

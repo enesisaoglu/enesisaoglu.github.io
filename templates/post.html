@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} | {{ site.name }}{% endblock %}
+{% block description %}{{ post.summary or post.title }}{% endblock %}
+{% block path %}/blog/{{ post.slug }}/{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ post.title|tojson }},"datePublished":"{{ post.date|iso }}","author":{"@type":"Person","name":"{{ site.name }}","url":"{{ site.url }}"}}
+</script>
+{% endblock %}
+{% block main %}
+<article class="post">
+  <header class="post-head">
+    <p class="when"><a href="/blog/">Writing</a>, <time datetime="{{ post.date|iso }}">{{ post.date|nice_date }}</time>, {{ post.minutes }} min read</p>
+    <h1>{{ post.title }}</h1>
+    {% if post.summary %}<p class="lede">{{ post.summary }}</p>{% endif %}
+  </header>
+  <div class="prose">{{ post.body|safe }}</div>
+  <footer class="post-foot">
+    <p>Thanks for reading. Questions or ideas? <a href="mailto:{{ site.email }}">Email me</a>.</p>
+    <p><a href="/blog/">Back to all posts</a></p>
+  </footer>
+</article>
+{% endblock %}

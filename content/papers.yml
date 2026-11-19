@@ -1,0 +1,34 @@
+# Your papers, newest first. Copy a block to add a new one.
+# Write your name exactly as "E. Isaoglu" in authors and it will be shown in bold.
+# pdf: put the file in static/papers/ and write /papers/file.pdf  (leave empty while under review if the journal asks)
+# figure: optional diagram file from templates/figures/
+
+- title: "ADDIM-LEAF: Overcoming Vision Integration Challenges in LLM-Orchestrated Companion Robots"
+  authors: "I. Warnants, E. Isaoglu, F.J. Ortiz, J.F. Roca González, J.A. Vera Repullo"
+  affiliation: "Technical University of Cartagena (UPCT) and Istanbul Kültür University"
+  venue: "Submitted to a journal. An extended IEEE version is in preparation."
+  year: 2026
+  status: Under review
+  pdf: /papers/ADDIM-LEAF.pdf
+  link: ""
+  summary: >-
+    Companion robots for older adults rarely make real use of their cameras.
+    We extended ADDIM-LEAF, a local multi-agent LLM system running on a small
+    Intel NUC, with a vision backend that gives the robot seven camera
+    services through spoken Spanish. Heavy vision models share a single GPU
+    through a memory manager that loads and unloads them by VRAM use, and
+    nothing ever leaves the house.
+  contribution:
+    - Built the Django vision backend and the REST API that the LLM agents call.
+    - Turned the robot camera into seven services, from patient identification to exercise tracking.
+    - Ran YOLOv8, SAM 3, Depth Anything V2 and EasyOCR side by side on one GPU without allocation failures.
+  services:
+    - Patient identification
+    - Medication intake tracking
+    - Nutrition analysis
+    - Object and hazard detection
+    - Document reading
+    - Person following
+    - Exercise tracking
+  figure: addim-leaf.svg
+  keywords: [Companion robots, LLM agents, Multimodal perception, Edge computing, Elderly care]

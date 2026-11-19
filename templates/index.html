@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.name }}",
+  "alternateName": "{{ site.name_native }}",
+  "jobTitle": "{{ site.role }}",
+  "url": "{{ site.url }}",
+  "email": "mailto:{{ site.email }}",
+  "image": "{{ site.url }}/img/og.png",
+  "sameAs": ["{{ site.linkedin }}", "{{ site.github }}"],
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "Istanbul Kültür University"},
+  "knowsAbout": ["Robotics", "Computer vision", "Reinforcement learning", "ROS2", "Industrial automation", "Embedded systems"]
+}
+</script>
+{% endblock %}
+{% block main %}
+<section class="hero" aria-labelledby="name">
+  <div class="hero-text">
+    <h1 id="name" class="name"><span>Enes</span> <span>Isaoglu</span></h1>
+    <p class="role">{{ site.role }}{% if site.open_to_work %}, <span class="open">open to robotics roles</span>{% endif %}</p>
+    <p class="intro">{{ site.intro }}</p>
+    <div class="actions">
+      <a class="btn btn-solid" href="{{ site.cv }}" download>Download CV</a>
+      <a class="btn" href="/projects/">See my projects</a>
+    </div>
+  </div>
+
+  <div class="robot-wrap">
+    {% include "robot.svg" %}
+    <p class="robot-hint">Pick a part to take the robot apart. Pick it again to put it back.</p>
+  </div>
+
+  <div class="explore" id="skills">
+    <h2 class="explore-title">What can Enes build?</h2>
+    <div class="chips" role="toolbar" aria-label="Filter skills by area">
+      <button type="button" class="chip-btn" data-area="" aria-pressed="true">Everything</button>
+      {% for area in skills %}<button type="button" class="chip-btn" data-area="{{ area.id }}" aria-pressed="false">{{ area.short or area.title }}</button>
+      {% endfor %}
+    </div>
+    <div class="panel" aria-live="polite">
+      {% for area in skills %}
+      <div class="area" data-area="{{ area.id }}">
+        <h3><button type="button" class="area-link" data-area="{{ area.id }}">{{ area.title }}</button> <span class="area-part">{{ area.part }}</span></h3>
+        <p class="area-summary">{{ area.summary }}</p>
+        <ul class="skill-list">
+          {% for s in area.skills %}<li class="{{ 'is-learning' if s.learning }}"><span class="skill-name">{{ s.name }}</span>{% if s.learning %}<span class="skill-note">learning now</span>{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+      <p class="panel-foot"><span class="learn-mark" aria-hidden="true"></span> learning now</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="edu-title">
+  <h2 id="edu-title" class="section-title">Education and languages</h2>
+  <div class="facts">
+    <div>
+      {% for e in site.education %}
+      <div class="fact">
+        <h3>{{ e.degree }}</h3>
+        <p>{{ e.school }}, {{ e.place }}, {{ e.years }}</p>
+        {% if e.note %}<p>{{ e.note }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <ul class="lang-list" aria-label="Languages">
+      {% for l in site.languages %}<li><span>{{ l.name }}</span><span>{{ l.level }}</span></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% if papers %}
+<section class="section" aria-labelledby="research-title">
+  <h2 id="research-title" class="section-title">Research</h2>
+  {% set p = papers[0] %}
+  <div class="teaser">
+    <div>
+      <p class="paper-meta"><span class="status">{{ p.status }}</span><span>{{ p.year }}</span></p>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.summary|truncate(190) }}</p>
+    </div>
+    <a class="textlink" href="/research/">Read more about the paper</a>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" aria-labelledby="writing-title">
+  <h2 id="writing-title" class="section-title">Latest writing</h2>
+  {% if posts %}
+  <ul class="rows">
+    {% for post in posts[:3] %}
+    <li><p class="when"><time datetime="{{ post.date|iso }}">{{ post.date|nice_date }}</time></p>
+      <div><h3><a href="/blog/{{ post.slug }}/">{{ post.title }}</a></h3>{% if post.summary %}<p>{{ post.summary }}</p>{% endif %}</div></li>
+    {% endfor %}
+  </ul>
+  <p class="links"><a href="/blog/">All writing</a></p>
+  {% else %}
+  <p class="empty">Notes from building robots are coming soon. Until then, the <a href="/projects/">projects</a> show what I have been working on.</p>
+  {% endif %}
+</section>
+
+{% include "contact.html" %}
+{% endblock %}
+{% block scripts %}<script src="/js/robot.js?v={{ site.built }}" defer></script>{% endblock %}

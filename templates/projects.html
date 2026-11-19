@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Projects | {{ site.name }}{% endblock %}
+{% block description %}Robotics projects by {{ site.name }}: a humanoid robot that mimics human motion, reinforcement learning in MuJoCo and an offline vision system for an elderly-care robot.{% endblock %}
+{% block path %}/projects/{% endblock %}
+{% block main %}
+<header class="page-head">
+  <h1>Projects</h1>
+  <p class="lede">Robots I designed, built or taught to move.</p>
+</header>
+<div class="projects">
+  {% for p in projects %}
+  <article class="project" id="{{ p.name|lower|replace(' ', '-')|replace("'", '') }}">
+    {% if p.video_embed %}<iframe class="project-video" src="{{ p.video_embed }}" title="{{ p.name }} demo" loading="lazy" allowfullscreen></iframe>
+    {% elif p.image %}<img class="project-img" src="{{ p.image }}" alt="{{ p.name }}" loading="lazy">{% endif %}
+    <header>
+      <h2 class="project-name">{{ p.name }}</h2>
+      <p class="project-status">{{ p.status }}</p>
+    </header>
+    <div class="project-body">
+      <p class="project-tagline">{{ p.tagline }}</p>
+      <p>{{ p.text }}</p>
+      <p class="tags">{% for s in p.stack %}<span>{{ s }}</span>{% endfor %}</p>
+      {% if p.github or p.video or p.paper %}<p class="links">
+        {% if p.github %}<a href="{{ p.github }}">Code on GitHub</a>{% endif %}
+        {% if p.video %}<a href="{{ p.video }}">Watch the demo</a>{% endif %}
+        {% if p.paper %}<a href="{{ p.paper }}">Read about the paper</a>{% endif %}
+      </p>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% include "contact.html" %}
+{% endblock %}

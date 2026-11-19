@@ -1,0 +1,55 @@
+# Newest first.
+# mark: the letters shown in the badge when there is no logo.
+# logo: optional, put an image in static/img/logos/ and write e.g. /img/logos/atlas.png
+- role: Robotics & Automation Engineer
+  org: Atlas Robots
+  mark: AR
+  logo: ""
+  place: Spain
+  start: Apr 2026
+  end: Oct 2026
+  points:
+    - Programmed KUKA industrial robots with PLC-based control and integrated industrial sensors for robotic cell automation.
+    - Wrote the PLC code for an autonomous mobile robot and worked on its electronics and high-level software.
+    - Synchronised LiDAR and motor encoders for real-time data acquisition used in autonomous navigation.
+  stack: [KUKA, PLC, PROFINET, AMR, LiDAR, Encoders]
+
+- role: Research Intern
+  org: Technical University of Cartagena (UPCT)
+  mark: UPCT
+  logo: ""
+  place: Spain
+  start: Nov 2025
+  end: Apr 2026
+  points:
+    - Built the vision backend of ADDIM-LEAF, an LLM-driven companion robot for elderly care that runs fully offline.
+    - Delivered seven camera services, including patient identification, medication tracking, hazard detection and exercise tracking.
+    - Ran YOLOv8, SAM, Depth Anything V2 and EasyOCR on a single GPU with a VRAM-aware model manager.
+    - Designed the Django REST Framework API and PostgreSQL database for perception and user data.
+    - Co-authored a paper on the system, currently under review.
+  stack: [YOLOv8, Django REST Framework, PostgreSQL, LLM agents, GPU]
+  link: { text: Read about the paper, url: /research/ }
+
+- role: Software Engineer Intern
+  org: One Eye Systems LC
+  mark: OE
+  logo: ""
+  place: Türkiye
+  start: Jun 2025
+  end: Sep 2025
+  points:
+    - Built backend services with Django REST Framework for Lawoes, a legal AI chatbot.
+    - Integrated Ollama and custom LLMs and tuned prompts for consistent answers.
+  stack: [Django REST Framework, Ollama, LLMs]
+
+- role: Software Team Member
+  org: ITU Rover Team
+  mark: ITU
+  logo: ""
+  place: Türkiye
+  start: Sep 2023
+  end: Jun 2024
+  points:
+    - Trained YOLO-based detection models for the URC and ERC rover challenges, raising task success rates to 85%+.
+    - Developed distance estimation in ROS using a ZED stereo camera.
+  stack: [YOLO, ROS, ZED stereo camera, OpenCV]

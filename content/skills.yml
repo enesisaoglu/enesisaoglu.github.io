@@ -1,0 +1,87 @@
+# Skills shown on the robot. Each area is one part of the robot.
+# Do not change the "id" values, they are tied to the robot drawing.
+# For each skill: name.
+# learning: true marks it "learning now". When you have learned it, delete the learning and note parts.
+
+- id: vision
+  short: Vision
+  part: Head sensor array
+  title: Computer vision
+  summary: The eyes. Detection and perception that run on real robots, not only in notebooks.
+  skills:
+    - { name: YOLO / YOLOv8 }
+    - { name: OpenCV }
+    - { name: Face recognition }
+    - { name: OCR }
+    - { name: ZED stereo camera }
+    - { name: Kinect v2 }
+
+- id: ai
+  short: AI and ML
+  part: Compute module
+  title: AI and machine learning
+  summary: The brain. Training models and keeping several of them running together on the robot's own GPU.
+  skills:
+    - { name: PyTorch }
+    - { name: scikit-learn }
+    - { name: Hugging Face Transformers }
+    - { name: Local LLMs (Ollama) }
+    - { name: On-device model deployment }
+    - { name: GPU memory management }
+
+- id: rl
+  short: RL and simulation
+  part: Legs
+  title: Reinforcement learning and simulation
+  summary: How the robot learns to move. Behaviours are trained in simulation before they touch real motors.
+  skills:
+    - { name: MuJoCo }
+    - { name: Gazebo }
+    - { name: Gymnasium }
+    - { name: Stable-Baselines3 }
+    - { name: Imitation learning }
+    - { name: Sim-to-real transfer }
+
+- id: control
+  short: Robotics and automation
+  part: Arms and actuators
+  title: Robotics and automation
+  summary: Making robot arms, cells and mobile bases do exactly what they are told, on time.
+  skills:
+    - { name: ROS2 }
+    - { name: ROS }
+    - { name: MoveIt (arm motion planning) }
+    - { name: SLAM and Nav2 navigation }
+    - { name: KUKA industrial robots }
+    - { name: PLC programming }
+    - { name: PROFINET }
+    - { name: Autonomous mobile robots }
+
+- id: embedded
+  short: Embedded
+  part: Motor control board
+  title: Embedded systems and electronics
+  summary: The layer between code and motors. Protocols and sensors are in my toolbox; the board-level work is what I am learning now.
+  skills:
+    - { name: STM32, learning: true, note: "The microcontroller for a joint controller board for my humanoid." }
+    - { name: ESP32, learning: true, note: "Small wireless sensor nodes around the robot." }
+    - { name: FreeRTOS, learning: true, note: "Running control, sensing and communication as separate real-time tasks." }
+    - { name: micro-ROS, learning: true, note: "Making the board show up in ROS2 as a node of its own." }
+    - { name: "UART, I2C, SPI" }
+    - { name: CAN bus }
+    - { name: "Motor control (PWM, encoders, PID)", learning: true, note: "Closed-loop control of each joint on the board itself." }
+    - { name: "Sensor integration (LiDAR, depth cameras)" }
+    - { name: PCB design (KiCad), learning: true, note: "Designing that board from schematic to a manufactured PCB." }
+
+- id: backend
+  short: Backend and DevOps
+  part: Comms unit
+  title: Backend and DevOps
+  summary: Everything the robot talks to. APIs, databases and the pipeline that ships the code.
+  skills:
+    - { name: FastAPI }
+    - { name: Django REST Framework }
+    - { name: PostgreSQL }
+    - { name: Docker }
+    - { name: CI/CD (GitHub Actions) }
+    - { name: Git and Linux }

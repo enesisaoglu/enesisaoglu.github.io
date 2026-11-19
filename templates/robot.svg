@@ -1,0 +1,165 @@
+<svg class="robot" viewBox="0 0 520 720" role="group" aria-label="Technical drawing of a humanoid robot. Each part opens a group of skills." xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="grid-dot"/></pattern>
+    <radialGradient id="fade-g" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+    <mask id="fade"><rect width="520" height="720" fill="url(#fade-g)"/></mask>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" class="hatch-line"/></pattern>
+  </defs>
+
+  <rect class="grid" width="520" height="720" fill="url(#dots)" mask="url(#fade)"/>
+
+  <g class="ground" aria-hidden="true">
+    <line x1="120" y1="680" x2="400" y2="680"/>
+    <rect x="120" y="681" width="280" height="12" fill="url(#hatch)"/>
+  </g>
+  <g class="axes" aria-hidden="true">
+    <path d="M24 704 H58 M24 704 V670"/><path class="tip" d="M58 704 l-6 -3 v6 Z M24 670 l-3 6 h6 Z"/>
+    <text x="63" y="708">x</text><text x="19" y="664">z</text>
+  </g>
+
+  <g class="callouts" aria-hidden="true">
+    <g data-area="vision"><polyline points="228,84 150,84"/><text x="144" y="89" text-anchor="end">Vision</text></g>
+    <g data-area="backend"><polyline points="318,96 396,96"/><text x="402" y="101">Comms</text></g>
+    <g data-area="ai"><polyline points="298,190 396,190"/><text x="402" y="195">Compute</text></g>
+    <g data-area="embedded"><polyline points="228,276 120,276"/><text x="114" y="281" text-anchor="end">Electronics</text></g>
+    <g data-area="control"><polyline points="152,330 104,330"/><text x="98" y="335" text-anchor="end">Actuators</text></g>
+    <g data-area="rl"><polyline points="250,560 380,560"/><text x="386" y="565">Locomotion</text></g>
+  </g>
+
+  <g class="guides" aria-hidden="true"></g>
+
+  <!-- static structure -->
+  <g class="frame" aria-hidden="true">
+    <line class="center" x1="260.0" y1="16" x2="260.0" y2="700"/>
+    <rect class="act" x="250" y="124" width="20" height="30" rx="4"/>
+    <path class="detail" d="M254 128 V150 M266 128 V150"/>
+    <path class="shell" d="M200 150 L320 150 Q337 152 339 168 L327 250 Q319 302 301 332 L219 332 Q201 302 193 250 L181 168 Q183 152 200 150 Z"/>
+    <rect class="bay" x="218" y="164" width="84" height="64" rx="6"/>
+    <rect class="bay" x="224" y="236" width="72" height="78" rx="6"/>
+    <path class="detail" d="M196 232 Q260 240 324 232 M204 170 L212 300 M316 170 L308 300"/>
+    <circle class="bolt" cx="206" cy="160" r="1.8"/><circle class="bolt" cx="314" cy="160" r="1.8"/>
+    <circle class="bolt" cx="226" cy="324" r="1.8"/><circle class="bolt" cx="294" cy="324" r="1.8"/>
+    <rect class="act" x="236" y="330" width="48" height="12" rx="3"/>
+    <path class="shell" d="M214 340 L306 340 L300 378 Q260 394 220 378 Z"/>
+    <path class="detail" d="M226 352 H294"/>
+  </g>
+
+  <!-- legs: reinforcement learning -->
+  <g class="part" data-area="rl" data-dx="-34" data-dy="34">
+<line class="center" x1="232" y1="352" x2="232" y2="684"/>
+<rect class="shell" x="217" y="386" width="30" height="112" rx="11"/>
+<rect class="act" x="222" y="402" width="20" height="48" rx="3"/>
+<path class="detail" d="M225 412 H239 M225 418 H239 M225 424 H239"/>
+<rect class="shell" x="219" y="524" width="26" height="116" rx="10"/>
+<path class="detail" d="M248 530 Q257 582 248 634"/>
+<rect class="act" x="224" y="566" width="16" height="40" rx="3"/>
+<line class="detail" x1="232" y1="572" x2="232" y2="600"/>
+<circle class="act" cx="232" cy="511" r="15"/><circle class="shell" cx="232" cy="511" r="6"/>
+<circle class="bolt" cx="239.4" cy="518.4" r="1.3"/><circle class="bolt" cx="224.6" cy="518.4" r="1.3"/><circle class="bolt" cx="224.6" cy="503.6" r="1.3"/><circle class="bolt" cx="239.4" cy="503.6" r="1.3"/>
+<circle class="act" cx="232" cy="650" r="9"/><circle class="bolt" cx="232" cy="650" r="2"/>
+<path class="shell" d="M204 677 L204 666 Q207 659 219 659 L247 659 Q260 661 267 669 L270 677 Z"/>
+<path class="detail" d="M204 677 H270 M252 662 L252 677"/>
+<circle class="act" cx="232" cy="372" r="16"/><circle class="shell" cx="232" cy="372" r="7"/>
+<circle class="bolt" cx="242.4" cy="378.0" r="1.4"/><circle class="bolt" cx="232.0" cy="384.0" r="1.4"/><circle class="bolt" cx="221.6" cy="378.0" r="1.4"/><circle class="bolt" cx="221.6" cy="366.0" r="1.4"/><circle class="bolt" cx="232.0" cy="360.0" r="1.4"/><circle class="bolt" cx="242.4" cy="366.0" r="1.4"/>
+</g>
+  <g class="part" data-area="rl" data-dx="34" data-dy="34"><g transform="matrix(-1 0 0 1 520 0)">
+<line class="center" x1="232" y1="352" x2="232" y2="684"/>
+<rect class="shell" x="217" y="386" width="30" height="112" rx="11"/>
+<rect class="act" x="222" y="402" width="20" height="48" rx="3"/>
+<path class="detail" d="M225 412 H239 M225 418 H239 M225 424 H239"/>
+<rect class="shell" x="219" y="524" width="26" height="116" rx="10"/>
+<path class="detail" d="M248 530 Q257 582 248 634"/>
+<rect class="act" x="224" y="566" width="16" height="40" rx="3"/>
+<line class="detail" x1="232" y1="572" x2="232" y2="600"/>
+<circle class="act" cx="232" cy="511" r="15"/><circle class="shell" cx="232" cy="511" r="6"/>
+<circle class="bolt" cx="239.4" cy="518.4" r="1.3"/><circle class="bolt" cx="224.6" cy="518.4" r="1.3"/><circle class="bolt" cx="224.6" cy="503.6" r="1.3"/><circle class="bolt" cx="239.4" cy="503.6" r="1.3"/>
+<circle class="act" cx="232" cy="650" r="9"/><circle class="bolt" cx="232" cy="650" r="2"/>
+<path class="shell" d="M204 677 L204 666 Q207 659 219 659 L247 659 Q260 661 267 669 L270 677 Z"/>
+<path class="detail" d="M204 677 H270 M252 662 L252 677"/>
+<circle class="act" cx="232" cy="372" r="16"/><circle class="shell" cx="232" cy="372" r="7"/>
+<circle class="bolt" cx="242.4" cy="378.0" r="1.4"/><circle class="bolt" cx="232.0" cy="384.0" r="1.4"/><circle class="bolt" cx="221.6" cy="378.0" r="1.4"/><circle class="bolt" cx="221.6" cy="366.0" r="1.4"/><circle class="bolt" cx="232.0" cy="360.0" r="1.4"/><circle class="bolt" cx="242.4" cy="366.0" r="1.4"/>
+</g></g>
+
+  <!-- arms: robotics and automation -->
+  <g class="part" data-area="control" data-dx="-64" data-dy="0"><g transform="rotate(6 176 166)">
+<line class="center" x1="176" y1="140" x2="176" y2="460"/>
+<rect class="shell" x="163" y="184" width="26" height="98" rx="9"/>
+<rect class="act" x="168" y="198" width="16" height="44" rx="3"/>
+<path class="detail" d="M171 206 H181 M171 212 H181 M171 218 H181"/>
+<rect class="shell" x="165" y="304" width="22" height="86" rx="8"/>
+<path class="detail" d="M189 312 Q196 350 189 386"/>
+<rect class="act" x="169" y="318" width="14" height="30" rx="3"/>
+<circle class="act" cx="176" cy="293" r="14"/><circle class="shell" cx="176" cy="293" r="6"/>
+<circle class="bolt" cx="183.1" cy="300.1" r="1.3"/><circle class="bolt" cx="168.9" cy="300.1" r="1.3"/><circle class="bolt" cx="168.9" cy="285.9" r="1.3"/><circle class="bolt" cx="183.1" cy="285.9" r="1.3"/>
+<rect class="act" x="168" y="391" width="16" height="9" rx="2"/>
+<path class="shell" d="M164 401 L188 401 L186 424 L166 424 Z"/>
+<path class="finger" d="M168.5 425 L167.5 446 M174 425 L173.5 451 M179 425 L179 451 M184 425 L185 446 M164.5 406 L157 425"/>
+<circle class="act" cx="176" cy="166" r="20"/><circle class="shell" cx="176" cy="166" r="11"/>
+<circle class="bolt" cx="191.5" cy="166.0" r="1.6"/><circle class="bolt" cx="183.8" cy="179.4" r="1.6"/><circle class="bolt" cx="168.2" cy="179.4" r="1.6"/><circle class="bolt" cx="160.5" cy="166.0" r="1.6"/><circle class="bolt" cx="168.2" cy="152.6" r="1.6"/><circle class="bolt" cx="183.8" cy="152.6" r="1.6"/>
+<circle class="bolt" cx="176" cy="166" r="2.4"/>
+</g></g>
+  <g class="part" data-area="control" data-dx="64" data-dy="0"><g transform="matrix(-1 0 0 1 520 0)"><g transform="rotate(6 176 166)">
+<line class="center" x1="176" y1="140" x2="176" y2="460"/>
+<rect class="shell" x="163" y="184" width="26" height="98" rx="9"/>
+<rect class="act" x="168" y="198" width="16" height="44" rx="3"/>
+<path class="detail" d="M171 206 H181 M171 212 H181 M171 218 H181"/>
+<rect class="shell" x="165" y="304" width="22" height="86" rx="8"/>
+<path class="detail" d="M189 312 Q196 350 189 386"/>
+<rect class="act" x="169" y="318" width="14" height="30" rx="3"/>
+<circle class="act" cx="176" cy="293" r="14"/><circle class="shell" cx="176" cy="293" r="6"/>
+<circle class="bolt" cx="183.1" cy="300.1" r="1.3"/><circle class="bolt" cx="168.9" cy="300.1" r="1.3"/><circle class="bolt" cx="168.9" cy="285.9" r="1.3"/><circle class="bolt" cx="183.1" cy="285.9" r="1.3"/>
+<rect class="act" x="168" y="391" width="16" height="9" rx="2"/>
+<path class="shell" d="M164 401 L188 401 L186 424 L166 424 Z"/>
+<path class="finger" d="M168.5 425 L167.5 446 M174 425 L173.5 451 M179 425 L179 451 M184 425 L185 446 M164.5 406 L157 425"/>
+<circle class="act" cx="176" cy="166" r="20"/><circle class="shell" cx="176" cy="166" r="11"/>
+<circle class="bolt" cx="191.5" cy="166.0" r="1.6"/><circle class="bolt" cx="183.8" cy="179.4" r="1.6"/><circle class="bolt" cx="168.2" cy="179.4" r="1.6"/><circle class="bolt" cx="160.5" cy="166.0" r="1.6"/><circle class="bolt" cx="168.2" cy="152.6" r="1.6"/><circle class="bolt" cx="183.8" cy="152.6" r="1.6"/>
+<circle class="bolt" cx="176" cy="166" r="2.4"/>
+</g></g></g>
+
+  <!-- compute module: ai -->
+  <g class="part" data-area="ai" data-dx="170" data-dy="-26">
+    <rect class="shell" x="222" y="168" width="76" height="56" rx="4"/>
+    <path class="detail" d="M230 174 V198 M236 174 V198 M242 174 V198 M248 174 V198 M254 174 V198 M260 174 V198 M266 174 V198 M272 174 V198 M278 174 V198 M284 174 V198 M290 174 V198"/>
+    <rect class="dark" x="246" y="204" width="28" height="14" rx="2"/>
+    <path class="detail" d="M228 211 H246 M274 211 H292"/>
+    <circle class="led" cx="291" cy="217" r="2"/>
+  </g>
+
+  <!-- motor control board: embedded -->
+  <g class="part" data-area="embedded" data-dx="170" data-dy="46">
+    <rect class="pcb" x="228" y="240" width="64" height="70" rx="3"/>
+    <path class="trace" d="M244 258 H236 V250 M244 266 H234 V284 M276 258 H284 V248 M276 270 H286 V292 M256 280 V292 H244 M264 280 V296"/>
+    <rect class="dark" x="250" y="254" width="20" height="20" rx="1.5"/>
+    <path class="pin" d="M254 252 V254 M254 274 V276 M260 252 V254 M260 274 V276 M266 252 V254 M266 274 V276 M248 258 H250 M270 258 H272 M248 264 H250 M270 264 H272 M248 270 H250 M270 270 H272"/>
+    <rect class="act" x="234" y="296" width="14" height="9" rx="1.5"/>
+    <rect class="act" x="270" y="296" width="16" height="9" rx="1.5"/>
+    <path class="pin" d="M238 300 H244 M274 300 H282"/>
+    <rect class="act" x="282" y="244" width="6" height="4" rx="1"/>
+    <circle class="led" cx="240" cy="288" r="2"/>
+  </g>
+
+  <!-- comms unit: backend -->
+  <g class="part" data-area="backend" data-dx="92" data-dy="-56">
+    <line class="mast" x1="306" y1="140" x2="314" y2="96"/>
+    <line class="mast" x1="294" y1="140" x2="297" y2="118"/>
+    <circle class="act" cx="314" cy="94" r="3.2"/><circle class="act" cx="297" cy="116" r="2.4"/>
+    <path class="wave" d="M322 86 A12 12 0 0 1 324 102 M328 80 A20 20 0 0 1 331 108"/>
+    <rect class="act" x="284" y="138" width="34" height="13" rx="3"/>
+    <circle class="led" cx="290" cy="144.5" r="1.8"/>
+  </g>
+
+  <!-- head: vision -->
+  <g class="part" data-area="vision" data-dx="-110" data-dy="-6">
+    <rect class="act" x="248" y="32" width="24" height="9" rx="2.5"/>
+    <path class="detail" d="M252 36.5 H268"/>
+    <rect class="act" x="223" y="74" width="7" height="22" rx="2"/>
+    <rect class="act" x="290" y="74" width="7" height="22" rx="2"/>
+    <path class="shell" d="M236 44 Q260 34 284 44 Q292 50 292 62 L290 102 Q288 120 260 126 Q232 120 230 102 L228 62 Q228 50 236 44 Z"/>
+    <path class="dark" d="M236 68 Q260 60 284 68 L283 92 Q260 100 237 92 Z"/>
+    <path class="glint" d="M240 70 Q260 64 280 70"/>
+    <circle class="lens" cx="249" cy="82" r="4.5"/><circle class="led" cx="249" cy="82" r="1.8"/>
+    <circle class="lens" cx="271" cy="82" r="4.5"/><circle class="led" cx="271" cy="82" r="1.8"/>
+    <circle class="lens" cx="260" cy="84" r="1.6"/>
+    <path class="detail" d="M246 110 H274 M250 115 H270"/>
+  </g>
+</svg>
