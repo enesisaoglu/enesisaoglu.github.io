@@ -40,6 +40,20 @@
     </div>
   </div>
 
+  {% if p.photos %}
+  <section class="photos" aria-label="Photos from the pilot">
+    <h2>In the pilot home</h2>
+    <div class="photo-grid">
+      {% for ph in p.photos %}
+      <figure>
+        <a href="{{ ph.src }}"><img src="{{ ph.src }}" alt="{{ ph.caption }}" loading="lazy" width="1050" height="1400"></a>
+        <figcaption>{{ ph.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   {% if p.figure %}
   <figure class="figure">
     {% include "figures/" ~ p.figure %}

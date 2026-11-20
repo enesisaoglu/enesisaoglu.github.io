@@ -2,6 +2,7 @@
 # Write your name exactly as "E. Isaoglu" in authors and it will be shown in bold.
 # pdf: put the file in static/papers/ and write /papers/file.pdf  (leave empty while under review if the journal asks)
 # figure: optional diagram file from templates/figures/
+# photos: optional, images in static/img/research/ with a short caption
 
 - title: "ADDIM-LEAF: Overcoming Vision Integration Challenges in LLM-Orchestrated Companion Robots"
   authors: "I. Warnants, E. Isaoglu, F.J. Ortiz, J.F. Roca González, J.A. Vera Repullo"
@@ -31,4 +32,8 @@
     - Person following
     - Exercise tracking
   figure: addim-leaf.svg
+  photos:
+    - { src: /img/research/addim-vision-menu.jpg, caption: "A participant opening the vision assistant: medication, nutrition, objects, reading and exercise." }
+    - { src: /img/research/addim-living-room.jpg, caption: "The robot in the living room of the pilot home." }
+    - { src: /img/research/addim-bedroom.jpg, caption: "Bedroom setup of the ADDIM pilot project." }
   keywords: [Companion robots, LLM agents, Multimodal perception, Edge computing, Elderly care]

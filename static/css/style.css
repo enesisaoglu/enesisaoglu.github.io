@@ -324,3 +324,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .robot .parts-list .tick.learning { stroke-dasharray: 2 2; }
 @media (max-width: 960px) { .learning { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .learn-list { grid-template-columns: 1fr; } }
+
+/* Research photos */
+.photos { margin-top: 3rem; }
+.photos h2 { font-size: 1.15rem; font-stretch: 112%; margin-bottom: 1rem; color: var(--signal); }
+.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.photo-grid figure { margin: 0; }
+.photo-grid img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); }
+.photo-grid a:hover img { border-color: var(--signal); }
+.photo-grid figcaption { color: var(--muted); font-size: .92rem; margin-top: .5rem; font-stretch: 94%; }
+@media (max-width: 760px) { .photo-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .photo-grid { grid-template-columns: 1fr; } }

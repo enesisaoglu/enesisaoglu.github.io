@@ -9,7 +9,7 @@
   start: Apr 2026
   end: Oct 2026
   points:
-    - Programmed KUKA industrial robots with PLC-based control and integrated industrial sensors for robotic cell automation.
+    - Worked on six robotic cells, programming KUKA industrial robots with PLC-based control and integrating industrial sensors.
     - Wrote the PLC code for an autonomous mobile robot and worked on its electronics and high-level software.
     - Synchronised LiDAR and motor encoders for real-time data acquisition used in autonomous navigation.
   stack: [KUKA, PLC, PROFINET, AMR, LiDAR, Encoders]
