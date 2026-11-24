@@ -4,6 +4,9 @@
 #   video_embed: YouTube embed link (https://www.youtube.com/embed/VIDEO_ID), shows the video on the page
 #   github: link to the code
 #   paper: link to a paper or /research/
+#   media: photos and videos shown in a strip under the project.
+#     image: { type: image, src: /img/..., w: width, h: height, caption: ... }
+#     video: { type: video, src: /video/....mp4, poster: /img/....jpg, w: width, h: height, caption: ... }
 - name: Synapiens
   tagline: A humanoid that learns to move from human demonstrations
   status: Ongoing
@@ -28,6 +31,11 @@
   image: ""
   video: ""
   github: https://github.com/enesisaoglu/rmis_ws
+  media:
+    - { type: video, src: /video/rmis-robot-mimicry.mp4, poster: /img/rmis/poster-robot.jpg, w: 480, h: 848, caption: "The robot copying my movements from across the room." }
+    - { type: video, src: /video/rmis-rviz-mimicry.mp4, poster: /img/rmis/poster-rviz.jpg, w: 848, h: 480, caption: "Kinect v2 and MediaPipe track my pose and the robot model in RViz follows it." }
+    - { type: image, src: /img/rmis/rmis-assembly.jpg, w: 787, h: 1400, caption: "All joints laid out during assembly." }
+    - { type: image, src: /img/rmis/rmis-arm-test.jpg, w: 778, h: 1400, caption: "Testing an arm on the bench." }
 
 - name: ADDIM-LEAF vision backend
   tagline: Eyes for an elderly-care robot that never leaves the house

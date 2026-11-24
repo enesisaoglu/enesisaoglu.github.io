@@ -26,6 +26,20 @@
         {% if p.paper %}<a href="{{ p.paper }}">Read about the paper</a>{% endif %}
       </p>{% endif %}
     </div>
+    {% if p.media %}
+    <div class="media-strip" role="list" aria-label="{{ p.name }} photos and videos">
+      {% for m in p.media %}
+      <figure class="media-item" role="listitem" style="--ar: {{ m.w }} / {{ m.h }}">
+        {% if m.type == 'video' %}
+        <video src="{{ m.src }}"{% if m.poster %} poster="{{ m.poster }}"{% endif %} width="{{ m.w }}" height="{{ m.h }}" controls muted playsinline preload="none"></video>
+        {% else %}
+        <a href="{{ m.src }}"><img src="{{ m.src }}" alt="{{ m.caption }}" width="{{ m.w }}" height="{{ m.h }}" loading="lazy"></a>
+        {% endif %}
+        {% if m.caption %}<figcaption>{{ m.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% endif %}
   </article>
   {% endfor %}
 </div>

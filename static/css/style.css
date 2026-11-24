@@ -335,3 +335,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .photo-grid figcaption { color: var(--muted); font-size: .92rem; margin-top: .5rem; font-stretch: 94%; }
 @media (max-width: 760px) { .photo-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .photo-grid { grid-template-columns: 1fr; } }
+
+/* Project photo and video strip */
+.media-strip { grid-column: 1 / -1; display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .6rem; margin-top: .5rem; }
+.media-item { margin: 0; flex: 0 0 auto; scroll-snap-align: start; display: flex; flex-direction: column; }
+.media-item video, .media-item img { height: clamp(15rem, 32vw, 20rem); width: auto; aspect-ratio: var(--ar); object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); background: var(--raise); display: block; min-height: 0; }
+.media-item a:hover img { border-color: var(--signal); }
+.media-item figcaption { color: var(--muted); font-size: .88rem; font-stretch: 94%; margin-top: .45rem; max-width: 0; min-width: 100%; }
+.media-strip::-webkit-scrollbar { height: 6px; }
+.media-strip::-webkit-scrollbar-thumb { background: #3a434a; border-radius: 3px; }
